@@ -1,7 +1,8 @@
 import socket
 import pyautogui
 
-host = socket.gethostname()
+host = str(input("Input Server name"))
+port = int(input("Input port number"))
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((host, 1234))
 msg = s.recv(1024).decode()
