@@ -28,9 +28,10 @@ def clientThread(clients, add):
 		if com[-1] != a:
 			clients.send( (com[-1]).encode())
 			a= com[-1]
-
+sock = input("Input server IP address: ")
+port = int(input("Input port number: "))
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-serversocket.bind((socket.gethostname(), 1234))
+serversocket.bind((sock, port))
 serversocket.listen(5)
 
 keyboardCallback = threading.Thread(target = Listen)
